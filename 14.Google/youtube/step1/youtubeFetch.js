@@ -1,0 +1,13 @@
+const requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyCcvgxRhPCt-yVa-BcpGUi1dmM4hKYiEi4&maxResults=3&chart=mostPopular", requestOptions)
+  .then(response => {
+    const data = response.json();
+    console.log(data);
+    console.log(data.kind);
+  })
+  .catch(error => console.log('error', error));
+
